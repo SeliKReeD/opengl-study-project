@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(184,25): warning C4244: инициализация: преобразование "unsigned int" в "float", возможна потеря данных
+  demo1-test.vcxproj -> C:\Users\admin\source\repos\demo1-test\Debug\demo1-test.exe
