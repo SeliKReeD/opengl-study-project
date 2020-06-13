@@ -157,6 +157,8 @@
     <None Include="vertex_core.glsl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="buffer_manafger_c.h" />
+    <ClInclude Include="camera.h" />
     <ClInclude Include="shader_c.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="texture_c.h" />

@@ -1,3 +1,11 @@
 ﻿  main.cpp
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(184,25): warning C4244: инициализация: преобразование "unsigned int" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(165,28): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(198,25): warning C4244: инициализация: преобразование "unsigned int" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(251,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(252,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(256,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(257,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(259,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(260,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(269,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
   demo1-test.vcxproj -> C:\Users\admin\source\repos\demo1-test\Debug\demo1-test.exe

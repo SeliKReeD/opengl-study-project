@@ -40,6 +40,12 @@
     <ClInclude Include="texture_c.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="buffer_manafger_c.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Images\container.png">
