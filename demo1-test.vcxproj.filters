@@ -41,6 +41,12 @@
     <None Include="vertex_object.glsl">
       <Filter>Файлы ресурсов</Filter>
     </None>
+    <None Include="fragment_loaded.glsl">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="vertex_loaded.glsl">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader_c.h">
@@ -49,19 +55,14 @@
     <ClInclude Include="stb_image.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="texture_c.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="camera.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Images\container.png">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
-    <Image Include="Images\pusheen.png">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
+    <ClInclude Include="mesh.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

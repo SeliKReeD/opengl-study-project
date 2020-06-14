@@ -6,8 +6,9 @@
 #include <gtc/type_ptr.hpp>
 
 #include <shader_c.h>
-#include <texture_c.h>
 #include <camera.h>
+#include <model.h>
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -112,51 +113,16 @@ int main()
         return -1;
     }
 
+    stbi_set_flip_vertically_on_load(true);
+
     // Configure global opengl state. For 3D objects. 
     glEnable(GL_DEPTH_TEST);
 
-    Shader objectShader("vertex_object.glsl", "fragment_object.glsl");
-    Shader lightShader("vertex_light.glsl", "fragment_light.glsl");
+    Shader shader("vertex_loaded.glsl", "fragment_loaded.glsl");
 
-	// Buffers.
-    unsigned int VBO, cubeVAO;
-
-	glGenVertexArrays(1, &cubeVAO);
-    glGenBuffers(1, &VBO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    glBindVertexArray(cubeVAO);
-
-    // Position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    // Normals.
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-	// Texture 
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-    glEnableVertexAttribArray(2);
-
-    unsigned int lightVAO;
-
-    glGenVertexArrays(1, &lightVAO);
-    glBindVertexArray(lightVAO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-    // Position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-
-    Texture texture("./Images/container.png");
-    Texture specularMap("./Images/container_specular.png");
-    objectShader.use();
-    objectShader.setInt("material.diffuse", 0);
-    objectShader.setInt("material.specular", 1);
-
-
+    // load models
+    // -----------
+    Model ourModel("./Tree/lowpolytree.obj");
 
     // Render loop
     while (!glfwWindowShouldClose(window))
@@ -169,62 +135,29 @@ int main()
         // Input
         processInput(window);
 
-        // Render
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        
+        shader.use();
 
-        objectShader.use();
-        objectShader.setVec3("light.position", lightPos);
-        objectShader.setVec3("viewPos", camera.position);
-        objectShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
-        objectShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
-        objectShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-        objectShader.setFloat("material.shininess", 64.0f);
-        objectShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
-        objectShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
-        objectShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
-        // Pass projection matrix to shader (note that in this case it could change every frame)
+        // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(camera.zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
-        objectShader.setMat4("projection", projection);
-
-        // Camera/view transformation
         glm::mat4 view = camera.GetViewMatrix();
-        objectShader.setMat4("view", view);
+        shader.setMat4("projection", projection);
+        shader.setMat4("view", view);
 
+        // render the loaded model
         glm::mat4 model = glm::mat4(1.0f);
-        objectShader.setMat4("model", model);
-
-        // bind diffuse map
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture.ID);
-
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, specularMap.ID);
-
-		glBindVertexArray(cubeVAO);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-
-        lightShader.use();
-        lightShader.setMat4("projection", projection);
-        lightShader.setMat4("view", view);
-
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, lightPos);
-        model = glm::scale(model, glm::vec3(0.2f));
-        lightShader.setMat4("model", model);
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
+        shader.setMat4("model", model);
 
 
-        glBindVertexArray(lightVAO);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-
+        ourModel.Draw(shader);
         // GLFW: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         glfwSwapBuffers(window);
         glfwPollEvents();
-    }
-
-    glDeleteVertexArrays(1, &cubeVAO);
-    glDeleteVertexArrays(1, &lightVAO);
-    glDeleteBuffers(1, &VBO);
+    };
 
     // GLFW: terminate, clearing all previously allocated GLFW resources.
     glfwTerminate();

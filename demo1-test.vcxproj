@@ -72,16 +72,18 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)demo1-test;$(SolutionDir)Linking\GLAD\include;$(SolutionDir)Linking\GLM\include;$(SolutionDir)Linking\GLFW\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Linking\GLFW\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)demo1-test;$(SolutionDir)Linking\GLAD\include;$(SolutionDir)Linking\GLM\include;$(SolutionDir)Linking\ASSIMP\include;$(SolutionDir)Linking\GLFW\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Linking\ASSIMP\lib;$(SolutionDir)Linking\GLFW\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)demo1-test;$(SolutionDir)Linking\GLAD\include;$(SolutionDir)Linking\GLM\include;$(SolutionDir)Linking\GLFW\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)demo1-test;$(SolutionDir)Linking\GLAD\include;$(SolutionDir)Linking\GLM\include;$(SolutionDir)Linking\ASSIMP\include;$(SolutionDir)Linking\GLFW\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Linking\GLFW\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(SolutionDir)Linking\GLFW\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+    <IncludePath>$(SolutionDir)demo1-test;$(SolutionDir)Linking\GLAD\include;$(SolutionDir)Linking\GLM\include;$(SolutionDir)Linking\ASSIMP\include;$(SolutionDir)Linking\GLFW\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -92,13 +94,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Linking\GLAD\include;$(SolutionDir)Linking\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Linking\GLAD\include;$(SolutionDir)Linking\GLFW\include;$(SolutionDir)linking\ASSIMP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Linking\GLFW\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Linking\ASSIMP\lib;$(SolutionDir)Linking\GLFW\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimpd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -109,7 +111,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Linking\GLAD\include;$(SolutionDir)Linking\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Linking\GLAD\include;$(SolutionDir)Linking\GLFW\include;$(SolutionDir)linking\ASSIMP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,10 +128,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Linking\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Linking\GLFW\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -155,20 +160,19 @@
   <ItemGroup>
     <None Include="fragment_core.glsl" />
     <None Include="fragment_light.glsl" />
+    <None Include="fragment_loaded.glsl" />
     <None Include="fragment_object.glsl" />
     <None Include="vertex_core.glsl" />
     <None Include="vertex_light.glsl" />
+    <None Include="vertex_loaded.glsl" />
     <None Include="vertex_object.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
+    <ClInclude Include="mesh.h" />
+    <ClInclude Include="model.h" />
     <ClInclude Include="shader_c.h" />
     <ClInclude Include="stb_image.h" />
-    <ClInclude Include="texture_c.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Images\container.png" />
-    <Image Include="Images\pusheen.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

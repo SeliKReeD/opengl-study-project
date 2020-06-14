@@ -1,0 +1,38 @@
+﻿  glad.c
+  main.cpp
+C:\Users\admin\source\repos\demo1-test\demo1-test\mesh.h(69,1): warning C4267: аргумент: преобразование из "size_t" в "GLsizei"; возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(131,28): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(198,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(199,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(203,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(204,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(206,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(207,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(216,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwInit в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwTerminate в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwWindowHint в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwCreateWindow в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwWindowShouldClose в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwSetWindowShouldClose в функции "void __cdecl processInput(struct GLFWwindow *)" (?processInput@@YAXPEAUGLFWwindow@@@Z).
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwSetFramebufferSizeCallback в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwPollEvents в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwSetInputMode в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwGetKey в функции "void __cdecl processInput(struct GLFWwindow *)" (?processInput@@YAXPEAUGLFWwindow@@@Z).
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwSetCursorPosCallback в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwSetScrollCallback в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwGetTime в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwMakeContextCurrent в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwSwapBuffers в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ glfwGetProcAddress в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __cdecl Assimp::Importer::Importer(void)" (??0Importer@Assimp@@QEAA@XZ) в функции "private: void __cdecl Model::loadModel(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?loadModel@Model@@AEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z).
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __cdecl Assimp::Importer::~Importer(void)" (??1Importer@Assimp@@QEAA@XZ) в функции "private: void __cdecl Model::loadModel(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?loadModel@Model@@AEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z).
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: struct aiScene const * __cdecl Assimp::Importer::ReadFile(char const *,unsigned int)" (?ReadFile@Importer@Assimp@@QEAAPEBUaiScene@@PEBDI@Z) в функции "public: struct aiScene const * __cdecl Assimp::Importer::ReadFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,unsigned int)" (?ReadFile@Importer@Assimp@@QEAAPEBUaiScene@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z).
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: char const * __cdecl Assimp::Importer::GetErrorString(void)const " (?GetErrorString@Importer@Assimp@@QEBAPEBDXZ) в функции "private: void __cdecl Model::loadModel(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?loadModel@Model@@AEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z).
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ aiGetMaterialTextureCount в функции "public: unsigned int __cdecl aiMaterial::GetTextureCount(enum aiTextureType)const " (?GetTextureCount@aiMaterial@@QEBAIW4aiTextureType@@@Z).
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ aiGetMaterialTexture в функции "public: enum aiReturn __cdecl aiMaterial::GetTexture(enum aiTextureType,unsigned int,struct aiString *,enum aiTextureMapping *,unsigned int *,float *,enum aiTextureOp *,enum aiTextureMapMode *)const " (?GetTexture@aiMaterial@@QEBA?AW4aiReturn@@W4aiTextureType@@IPEAUaiString@@PEAW4aiTextureMapping@@PEAIPEAMPEAW4aiTextureOp@@PEAW4aiTextureMapMode@@@Z).
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ stbi_load в функции "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z).
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ stbi_image_free в функции "unsigned int __cdecl TextureFromFile(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)" (?TextureFromFile@@YAIPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z).
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ stbi_set_flip_vertically_on_load в функции main.
+C:\Users\admin\source\repos\demo1-test\Linking\GLFW\lib\glfw3.lib : warning LNK4272: тип компьютера библиотеки "x86" конфликтует с типом целевого компьютера "x64"
+C:\Users\admin\source\repos\demo1-test\x64\Debug\demo1-test.exe : fatal error LNK1120: неразрешенных внешних элементов: 25
