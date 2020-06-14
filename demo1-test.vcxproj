@@ -154,10 +154,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="fragment_core.glsl" />
+    <None Include="fragment_light.glsl" />
+    <None Include="fragment_object.glsl" />
     <None Include="vertex_core.glsl" />
+    <None Include="vertex_light.glsl" />
+    <None Include="vertex_object.glsl" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="buffer_manafger_c.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="shader_c.h" />
     <ClInclude Include="stb_image.h" />
