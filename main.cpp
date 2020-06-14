@@ -120,9 +120,7 @@ int main()
 
     Shader shader("vertex_loaded.glsl", "fragment_loaded.glsl");
 
-    // load models
-    // -----------
-    Model ourModel("./Tree/lowpolytree.obj");
+    Model backpack("./model/backpack.obj");
 
     // Render loop
     while (!glfwWindowShouldClose(window))
@@ -153,7 +151,7 @@ int main()
         shader.setMat4("model", model);
 
 
-        ourModel.Draw(shader);
+        backpack.Draw(shader);
         // GLFW: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         glfwSwapBuffers(window);
         glfwPollEvents();
