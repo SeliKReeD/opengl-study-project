@@ -1,10 +1,11 @@
 ﻿  main.cpp
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(129,28): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(196,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(197,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(201,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(202,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(204,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(205,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(214,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(164,28): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(281,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(282,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(286,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(287,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(289,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(290,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(299,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+LINK : warning LNK4098: библиотека по умолчанию "MSVCRT" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
   demo1-test.vcxproj -> C:\Users\admin\source\repos\demo1-test\Debug\demo1-test.exe
