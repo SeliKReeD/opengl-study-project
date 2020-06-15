@@ -7,5 +7,4 @@ C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(287,19): warning C424
 C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(289,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
 C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(290,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
 C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(299,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-LINK : warning LNK4098: библиотека по умолчанию "MSVCRT" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
   demo1-test.vcxproj -> C:\Users\admin\source\repos\demo1-test\Debug\demo1-test.exe
