@@ -145,8 +145,10 @@ int main()
     Shader lightCubeShader("vertex_light.glsl", "fragment_light.glsl");
    
     Model backpack("./model/backpack.obj");
+    Model rock("./model/rock/rock.obj");
+    Model planet("./model/planet/planet.obj");
 
-    // first, configure the cube's VAO (and VBO)
+    // First, configure the cube's VAO (and VBO)
     unsigned int VBO, cubeVAO;
     glGenVertexArrays(1, &cubeVAO);
     glGenBuffers(1, &VBO);
@@ -178,6 +180,39 @@ int main()
     lightingShader.use();
     lightingShader.setInt("material.diffuse", 0);
     lightingShader.setInt("material.specular", 1);
+
+#pragma region asteroid field placement
+    unsigned int amount = 50;
+    glm::mat4* modelMatrices;
+    modelMatrices = new glm::mat4[amount];
+    srand(glfwGetTime()); // initialize random seed	
+    float radius = 50.0;
+    float offset = 2.5f;
+    for (unsigned int i = 0; i < amount; i++)
+    {
+        glm::mat4 model = glm::mat4(1.0f);
+        // 1. translation: displace along circle with 'radius' in range [-offset, offset]
+        float angle = (float)i / (float)amount * 360.0f;
+        float displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+        float x = sin(angle) * radius + displacement;
+        displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+        float y = displacement * 0.4f; // keep height of field smaller compared to width of x and z
+        displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+        float z = cos(angle) * radius + displacement;
+        model = glm::translate(model, glm::vec3(x, y, z));
+
+        // 2. scale: scale between 0.05 and 0.25f
+        float scale = (rand() % 20) / 100.0f + 0.05;
+        model = glm::scale(model, glm::vec3(scale));
+
+        // 3. rotation: add random rotation around a (semi)randomly picked rotation axis vector
+        float rotAngle = (rand() % 360);
+        model = glm::rotate(model, rotAngle, glm::vec3(0.4f, 0.6f, 0.8f));
+
+        // 4. now add to list of matrices
+        modelMatrices[i] = model;
+    }
+#pragma endregion
 
     // Render loop
     while (!glfwWindowShouldClose(window))
@@ -305,22 +340,52 @@ int main()
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
 
-        
+#pragma region planet
         // Draw backpack
-        //shader.use();
+        shader.use();
 
-        //// View/projection transformations
-        //shader.setMat4("projection", projection);
-        //shader.setMat4("view", view);
+        // View/projection transformations
+        shader.setMat4("projection", projection);
+        shader.setMat4("view", view);
 
-        //// Render the loaded model
-        //model = glm::mat4(1.0f);
-        //model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
-        //model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));	// it's a bit too big for our scene, so scale it down
-        //shader.setMat4("model", model);
+        // Render the loaded model
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(-15.0f, 0.0f, -8.0f)); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));	// it's a bit too big for our scene, so scale it down
+
+        model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+        shader.setMat4("model", model);
+        planet.Draw(shader);
+
+        // draw meteorites
+        for (unsigned int i = 0; i < amount; i++)
+        {
+            shader.setMat4("model", modelMatrices[i]);
+            rock.Draw(shader);
+        }
+
+        planet.Draw(shader);
+#pragma endregion
+
+#pragma region backpack
+        // Draw backpack
+        shader.use();
+
+        // View/projection transformations
+        shader.setMat4("projection", projection);
+        shader.setMat4("view", view);
+
+        // Render the loaded model
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 5.0f)); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));	// it's a bit too big for our scene, so scale it down
+        model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        shader.setMat4("model", model);
 
 
-        //backpack.Draw(shader);
+        backpack.Draw(shader);
+#pragma endregion
+       
         // GLFW: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         glfwSwapBuffers(window);
         glfwPollEvents();
