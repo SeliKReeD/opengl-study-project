@@ -59,6 +59,12 @@
     <None Include="vertex_shadow_mapping.glsl">
       <Filter>Файлы ресурсов</Filter>
     </None>
+    <None Include="vertex_paralax.glsl">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="fragment_paralax.glsl">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader_c.h">

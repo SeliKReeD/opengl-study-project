@@ -1,23 +1,24 @@
 ﻿  main.cpp
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(244,22): warning C4244: аргумент: преобразование "double" в "unsigned int", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(261,21): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(265,24): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(279,28): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(379,62): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(380,66): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(387,62): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(388,66): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(395,62): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(396,66): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(403,62): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(404,66): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(412,57): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(413,61): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(572,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(573,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(577,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(578,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(580,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(581,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(590,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(28,24): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(256,22): warning C4244: аргумент: преобразование "double" в "unsigned int", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(273,21): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(277,24): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(292,28): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(390,62): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(391,66): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(398,62): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(399,66): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(406,62): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(407,66): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(414,62): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(415,66): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(423,57): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(424,61): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(602,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(603,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(607,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(608,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(610,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(611,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\admin\source\repos\demo1-test\demo1-test\main.cpp(620,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
   demo1-test.vcxproj -> C:\Users\admin\source\repos\demo1-test\Debug\demo1-test.exe
