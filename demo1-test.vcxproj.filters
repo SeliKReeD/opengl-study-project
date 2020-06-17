@@ -47,6 +47,18 @@
     <None Include="vertex_loaded.glsl">
       <Filter>Файлы ресурсов</Filter>
     </None>
+    <None Include="vertex_shadow.glsl">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="fragment_shadow.glsl">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="fragment_shadow_mapping.glsl">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="vertex_shadow_mapping.glsl">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader_c.h">
